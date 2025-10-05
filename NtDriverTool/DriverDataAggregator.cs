@@ -66,7 +66,8 @@ public class DriverDataAggregator
     {
         var driverData = new List<DriverData>();
 
-        var services = ServiceController.GetDevices().ToDictionary(s => s.ServiceName);
+        var services = ServiceController.GetDevices()
+            .ToDictionary(s => s.ServiceName, StringComparer.OrdinalIgnoreCase);
 
         foreach (var service in services)
             service.Value.Refresh();
@@ -173,9 +174,12 @@ public class DriverDataAggregator
         {
             var data = driverData.FirstOrDefault(d =>
                 string.Equals(d.ExpectedObjectName, driverObject, StringComparison.OrdinalIgnoreCase));
+            var identifier = driverObject.Substring(driverObject.LastIndexOf('\\') + 1);
+            data ??= driverData.FirstOrDefault(d =>
+                string.Equals(d.Identifier, identifier, StringComparison.OrdinalIgnoreCase));
             if (data is null)
                 // Driver objects not known to SCM or the registry.
-                driverData.Add(new DriverData(driverObject.Substring(driverObject.LastIndexOf('\\') + 1))
+                driverData.Add(new DriverData(identifier)
                 {
                     ServiceKey = null,
                     Service = null,

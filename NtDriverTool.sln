@@ -1,5 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36518.9 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NtDriverTool", "NtDriverTool\NtDriverTool.csproj", "{334C6732-72C3-4569-B69C-044BB6214F1A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NtCoreLib", "sandbox-attacksurface-analysis-tools\NtCoreLib\NtCoreLib.csproj", "{34F2E865-480D-4EBB-B603-8D07C9E4CC90}"
@@ -18,5 +21,11 @@ Global
 		{34F2E865-480D-4EBB-B603-8D07C9E4CC90}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{34F2E865-480D-4EBB-B603-8D07C9E4CC90}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{34F2E865-480D-4EBB-B603-8D07C9E4CC90}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5F70A5D2-C51D-487C-852A-36BDFD7DD9EB}
 	EndGlobalSection
 EndGlobal
